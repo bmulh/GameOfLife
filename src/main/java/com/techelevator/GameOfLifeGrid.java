@@ -63,35 +63,7 @@ public class GameOfLifeGrid {
 		return liveNeighborCount;
 		
 	}
-	
-	
-	public boolean isInFirstRow(int rowValue) {
-		if(rowValue == 0) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean isInLastRow(int rowValue) {
-		if(rowValue == (this.numberOfRows - 1)) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean isInFirstColumn(int columnValue) {
-		if(columnValue == 0) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean isInLastColumn(int columnValue) {
-		if(columnValue == (this.numberOfColumns - 1)) {
-			return true;
-		}
-		return false;
-	}
+
 	
 	//getters & setters
 	public int getNumberOfColumns() {
