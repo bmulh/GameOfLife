@@ -34,14 +34,28 @@ public class GameOfLifeGrid {
 		int columnLength = grid[0].length;
 		int [][] newGrid = new int[rowLength][columnLength];
 		
-		for(int i = 0; i < rowLength; i++) {
-			int liveNeigherCount = 0;
-			for(int j = 0; j < columnLength; j++) {
-				
-			}
-		}
 		return newGrid;
 	}
+	public int countLiveNieghbors(int[][] currentGrid, int row, int column) {
+		int liveNeighborCount = 0;
+		boolean isCounting = true;
+		while(isCounting)
+		try { liveNeighborCount += currentGrid[row + 1][column]; //check bottom
+			liveNeighborCount += currentGrid[row - 1][column]; //check top
+			liveNeighborCount += currentGrid[row][column + 1]; //check right
+			liveNeighborCount += currentGrid[row][column - 1]; //check left
+			liveNeighborCount += currentGrid[row - 1][column - 1]; //up 1 left 1
+			liveNeighborCount += currentGrid[row - 1][column + 1]; //up 1 right 1
+			liveNeighborCount += currentGrid[row + 1][column - 1]; // down 1 left 1
+			liveNeighborCount += currentGrid[row + 1][column + 1]; //down 1 right 1
+			
+		} catch(Exception e) {
+			
+		}
+		return null;
+		
+	}
+	
 	
 	public boolean isInFirstRow(int rowValue) {
 		if(rowValue == 0) {
