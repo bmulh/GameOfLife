@@ -6,14 +6,14 @@ public class GameOfLifeGrid {
 	private int numberOfRows;
 	private int[][] grid;
 	
-	public int[][] setInitialSize(int rows, int columns){
+	public void setInitialSize(int rows, int columns){
 		this.grid = new int[rows][columns];
 		this.numberOfColumns = columns;
 		this.numberOfRows = rows;
 
-		return grid;
 	}
-	public int[][] setGridValues(int[][] grid){
+	
+	public void setGridValues(int[][] grid){
 		int rowLength = grid.length;
 		int columnLength = grid[0].length;
 		
@@ -28,9 +28,37 @@ public class GameOfLifeGrid {
 				grid[i][j] = cellValue;
 			}
 		}
-		return grid;
 	}
-
+	
+	public boolean isInFirstRow(int rowValue) {
+		if(rowValue == 0) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean isInLastRow(int rowValue) {
+		if(rowValue == (this.numberOfRows - 1)) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean isInFirstColumn(int columnValue) {
+		if(columnValue == 0) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean isInLastColumn(int columnValue) {
+		if(columnValue == (this.numberOfColumns - 1)) {
+			return true;
+		}
+		return false;
+	}
+	
+	//getters & setters
 	public int getNumberOfColumns() {
 		return numberOfColumns;
 	}
