@@ -13,6 +13,23 @@ public class GameOfLifeGrid {
 
 		return grid;
 	}
+	public int[][] setGridValues(int[][] grid){
+		int rowLength = grid.length;
+		int columnLength = grid[0].length;
+		
+		
+		for(int i = 0; i < rowLength; i++) {
+			for(int j = 0; j < columnLength; j++) {
+				int cellValue = 0;
+				double num = Math.random();
+				if(num <= 0.1) { //returns 1(alive) ~10% of the time
+					cellValue = 1;
+				}
+				grid[i][j] = cellValue;
+			}
+		}
+		return grid;
+	}
 
 	public int getNumberOfColumns() {
 		return numberOfColumns;
