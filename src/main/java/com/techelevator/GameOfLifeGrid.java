@@ -30,10 +30,27 @@ public class GameOfLifeGrid {
 	}
 	
 	public int[][] getNewState(){
-		int rowLength = grid.length;
-		int columnLength = grid[0].length;
+		int rowLength = this.grid.length;
+		int columnLength = this.grid[0].length;
 		int [][] newGrid = new int[rowLength][columnLength];
 		
+		for(int i = 0; i < rowLength; i++) {
+			for(int j = 0; j < columnLength; j++) {
+				
+				int liveNeighborTotalCount = 0;
+				liveNeighborTotalCount = countAllLiveNieghbors(this.grid, i, j);
+				
+				if(liveNeighborTotalCount < 2 || liveNeighborTotalCount > 3) {
+					newGrid[i][j] = 0;
+				} else if(liveNeighborTotalCount == 3 && this.grid[i][j] == 0) {
+					newGrid[i][j] = 1;
+				} else if(liveNeighborTotalCount == 2 || liveNeighborTotalCount == 3 && this.grid[i][j] == 1) {
+					newGrid[i][j] = 1;
+				} else {
+					newGrid[i][j] = this.grid[i][j];
+				}
+			}
+		}
 		return newGrid;
 	}
 	
@@ -59,12 +76,8 @@ public class GameOfLifeGrid {
 		} catch(Exception e) {
 			
 		}
-		
 		return liveNeighborCount;
-		
 	}
-
-	
 	//getters & setters
 	public int getNumberOfColumns() {
 		return numberOfColumns;

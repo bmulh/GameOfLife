@@ -52,4 +52,24 @@ public class GameOfLifeGridTest {
 		Assert.assertEquals(1, gameOfLifeGrid.countAllLiveNieghbors(nonRandomGrid, 0, 0));
 		Assert.assertEquals(3, gameOfLifeGrid.countAllLiveNieghbors(nonRandomGrid, 1, 1));
 	}
+	@Test
+	public void return_cell_dead_if_less_than_2_neighbors() {
+		int[][] nonRandomGrid = {{0,0,1,0},
+								{1,0,0,1},
+								{0,1,0,0}};
+		gameOfLifeGrid.setGrid(nonRandomGrid);
+		int[][] newStateGrid = gameOfLifeGrid.getNewState();
+		Assert.assertEquals(0, newStateGrid[2][1]);
+		Assert.assertEquals(0, newStateGrid[2][3]);
+	}
+	@Test
+	public void cell_dead_if_more_than_3_live_neighbors() {
+		int[][] nonRandomGrid = {{0,0,1,0},
+								{1,0,0,1},
+								{0,1,0,0},
+								{1,1,0,1}};
+		gameOfLifeGrid.setGrid(nonRandomGrid);
+		int[][] newStateGrid = gameOfLifeGrid.getNewState();
+		Assert.assertEquals(0, newStateGrid[2][0]);
+	}
 }
