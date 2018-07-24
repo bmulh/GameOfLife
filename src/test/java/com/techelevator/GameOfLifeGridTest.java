@@ -49,11 +49,15 @@ public class GameOfLifeGridTest {
 		int[][] grid = gameOfLifeGrid.getGrid();
 		int rowValue = grid[0][3];
 		Assert.assertTrue(gameOfLifeGrid.isInFirstRow(rowValue));
-		rowValue = grid[0][0];
+		//int rowValue = grid[0][0];
 		Assert.assertTrue(gameOfLifeGrid.isInFirstRow(rowValue));
 	}
 	@Test
 	public void return_false_for_value_not_in_first_row() {
-		
+		int[][] grid = gameOfLifeGrid.getGrid();
+		int rowValue = grid[1][3];
+		Assert.assertFalse(gameOfLifeGrid.isInFirstRow(rowValue));
+		rowValue = grid[9][3];
+		Assert.assertFalse(gameOfLifeGrid.isInFirstRow(rowValue));
 	}
 }

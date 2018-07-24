@@ -17,7 +17,6 @@ public class GameOfLifeGrid {
 		int rowLength = grid.length;
 		int columnLength = grid[0].length;
 		
-		
 		for(int i = 0; i < rowLength; i++) {
 			for(int j = 0; j < columnLength; j++) {
 				int cellValue = 0;
@@ -28,6 +27,20 @@ public class GameOfLifeGrid {
 				grid[i][j] = cellValue;
 			}
 		}
+	}
+	
+	public int[][] getNewState(){
+		int rowLength = grid.length;
+		int columnLength = grid[0].length;
+		int [][] newGrid = new int[rowLength][columnLength];
+		
+		for(int i = 0; i < rowLength; i++) {
+			int liveNeigherCount = 0;
+			for(int j = 0; j < columnLength; j++) {
+				
+			}
+		}
+		return newGrid;
 	}
 	
 	public boolean isInFirstRow(int rowValue) {
