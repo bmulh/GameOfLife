@@ -45,23 +45,6 @@ public class GameOfLifeGridTest {
 	}
 	
 	@Test
-	public void return_true_for_value_in_first_row() {
-		gameOfLifeGrid.setGridValues(gameOfLifeGrid.getGrid());
-		int[][] grid = gameOfLifeGrid.getGrid();
-		int rowValue = grid[0][3];
-		Assert.assertTrue(gameOfLifeGrid.isInFirstRow(rowValue));
-		//int rowValue = grid[0][0];
-		Assert.assertTrue(gameOfLifeGrid.isInFirstRow(rowValue));
-	}
-	@Test
-	public void return_false_for_value_not_in_first_row() {
-		int[][] grid = gameOfLifeGrid.getGrid();
-		int rowValue = grid[1][3];
-		Assert.assertFalse(gameOfLifeGrid.isInFirstRow(rowValue));
-		rowValue = grid[9][3];
-		Assert.assertFalse(gameOfLifeGrid.isInFirstRow(rowValue));
-	}
-	@Test
 	public void return_1_if_neighbor_valid_and_in_array() {
 		int[][] nonRandomGrid = {{0,0,1,0},
 								{1,0,0,1},
