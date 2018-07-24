@@ -36,22 +36,22 @@ public class GameOfLifeGrid {
 		
 		return newGrid;
 	}
+	
 	public int countAllLiveNieghbors(int[][] currentGrid, int row, int column) {
-		int liveNeighborCount = 0;
-		boolean isCounting = true;
-		while(isCounting)
-			liveNeighborCount += validNeighbor(currentGrid, row + 1, column); //check bottom
-		liveNeighborCount += validNeighbor(currentGrid, row - 1, column); //check top
-		liveNeighborCount += validNeighbor(currentGrid, row, column + 1); //check right
-		liveNeighborCount += validNeighbor(currentGrid, row, column - 1); //check left
-		liveNeighborCount += validNeighbor(currentGrid, row - 1, column - 1); //up 1 left 1
-		liveNeighborCount += validNeighbor(currentGrid, row - 1, column + 1); //up 1 right 1
-		liveNeighborCount += validNeighbor(currentGrid, row + 1, column - 1); // down 1 left
-		liveNeighborCount += validNeighbor(currentGrid, row + 1, column + 1); //down 1 right 1
-				
-		return liveNeighborCount;
+		int liveNeighborTotalCount = 0;
 		
+		liveNeighborTotalCount += validNeighbor(currentGrid, row + 1, column); //check bottom
+		liveNeighborTotalCount += validNeighbor(currentGrid, row - 1, column); //check top
+		liveNeighborTotalCount += validNeighbor(currentGrid, row, column + 1); //check right
+		liveNeighborTotalCount += validNeighbor(currentGrid, row, column - 1); //check left
+		liveNeighborTotalCount += validNeighbor(currentGrid, row - 1, column - 1); //up 1 left 1
+		liveNeighborTotalCount += validNeighbor(currentGrid, row - 1, column + 1); //up 1 right 1
+		liveNeighborTotalCount += validNeighbor(currentGrid, row + 1, column - 1); // down 1 left
+		liveNeighborTotalCount += validNeighbor(currentGrid, row + 1, column + 1); //down 1 right 1
+				
+		return liveNeighborTotalCount;
 	}
+	
 	public int validNeighbor(int[][] currentGrid, int neighborRow, int neighborColumn) {
 		int liveNeighborCount = 0;
 		try {
