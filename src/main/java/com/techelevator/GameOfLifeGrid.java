@@ -21,7 +21,7 @@ public class GameOfLifeGrid {
 			for(int j = 0; j < columnLength; j++) {
 				int cellValue = 0;
 				double num = Math.random();
-				if(num <= 0.1) { //returns 1(alive) ~10% of the time
+				if(num <= 0.2) { //returns 1(alive) ~20% of the time
 					cellValue = 1;
 				}
 				this.grid[i][j] = cellValue;
@@ -78,13 +78,13 @@ public class GameOfLifeGrid {
 		}
 		return liveNeighborCount;
 	}
-	public void moveToSecondState(int[][] grid) {
-		int rowLength = grid.length;
-		int columnLength = grid[0].length;
+	public void moveToSecondState(int[][] CurrentGrid) {
+		int rowLength = CurrentGrid.length;
+		int columnLength = CurrentGrid[0].length;
 	
 		for(int i = 0; i < rowLength; i++) {
 			for(int j = 0; j < columnLength; j++) {
-				this.grid[i][j] = grid[i][j];
+				this.grid[i][j] = CurrentGrid[i][j];
 			}
 		}
 	}

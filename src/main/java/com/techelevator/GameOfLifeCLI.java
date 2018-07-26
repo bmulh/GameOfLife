@@ -1,6 +1,8 @@
 package com.techelevator;
 
 import com.techelevator.View.Menu;
+import java.util.*;
+
 
 public class GameOfLifeCLI {
 	
@@ -46,7 +48,7 @@ public class GameOfLifeCLI {
 				String choice2 = (String)menu.getChoiceFromOptions(NEXT_STATE_MENU_OPTIONS);
 			
 					if(choice2.equals(NEXT_STATE_MENU_RECALCULATE)) {
-						int[][] currentGrid = initialGameOfLifeGrid.getGrid();
+						int[][] currentGrid = initialGameOfLifeGrid.getNewState();
 						initialGameOfLifeGrid.moveToSecondState(currentGrid);
 						
 						System.out.println("Current State \n");
@@ -59,7 +61,10 @@ public class GameOfLifeCLI {
 					if(choice2.equals(NEXT_STATE_MENU_RETURN_TO_PREVIOUS_MENU)){
 						break;
 					}
-				}	
+				}
+			}
+			if(choice.equals(MAIN_MENU_OPTION_QUIT)){
+				System.exit(0);
 			}
 		}
 	}
