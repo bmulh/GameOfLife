@@ -15,6 +15,11 @@ public class GameOfLifeCLI {
 	private static final String NEXT_STATE_MENU_RETURN_TO_PREVIOUS_MENU = "Return to previous menu";
 	private static final String[] NEXT_STATE_MENU_OPTIONS = {NEXT_STATE_MENU_RECALCULATE, 
 															 NEXT_STATE_MENU_RETURN_TO_PREVIOUS_MENU};
+	private static final String HEADER = "***********************\n" +
+										 " Conway's Game of Life\n" +
+										 "***********************\n";
+	private static final String FOOTER = "Thank you for playing Conway's Game of Life\n" +
+										 "Coded by Brian Mulh";
 
 	private Menu menu;
 	private GameOfLifeGrid initialGameOfLifeGrid;
@@ -25,6 +30,7 @@ public class GameOfLifeCLI {
 	}
 	
 	public void run() {
+		System.out.println(HEADER);
 		while(true) {
 			String choice = (String)menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 			
@@ -39,14 +45,7 @@ public class GameOfLifeCLI {
 				String choice2 = (String)menu.getChoiceFromOptions(NEXT_STATE_MENU_OPTIONS);
 			
 					if(choice2.equals(NEXT_STATE_MENU_RECALCULATE)) {
-						int[][] currentGrid = initialGameOfLifeGrid.getNewState();
-						initialGameOfLifeGrid.moveToSecondState(currentGrid);
-						
-						System.out.println("Current State \n");
-						printGrid(initialGameOfLifeGrid.getGrid());
-						
-						System.out.println("New State \n");
-						printGrid(initialGameOfLifeGrid.getNewState());
+						recalculate();
 						
 					} 
 					if(choice2.equals(NEXT_STATE_MENU_RETURN_TO_PREVIOUS_MENU)){
@@ -55,6 +54,7 @@ public class GameOfLifeCLI {
 				}
 			}
 			if(choice.equals(MAIN_MENU_OPTION_QUIT)){
+				System.out.println(FOOTER);
 				System.exit(0);
 			}
 		}
@@ -64,7 +64,7 @@ public class GameOfLifeCLI {
 	
 	
 	public void userSetInitialGrid() {
-		System.out.println("Please enter a grid that is larger than 0x0 and no larger than 15x15\n");
+		System.out.println("\nPlease enter a grid that is larger than 0x0 and no larger than 15x15");
 		
 		System.out.println("How many rows?   ");
 		int rows = menu.getDimensionsFromUser();
@@ -99,11 +99,22 @@ public class GameOfLifeCLI {
 		}
 		initialGameOfLifeGrid.setGridValues();
 		
-		System.out.println("Initial State \n");
+		System.out.println("\nInitial State ");
+		printGrid(initialGameOfLifeGrid.getGrid());
+		
+		System.out.println("\nNew State ");
+		printGrid(initialGameOfLifeGrid.getNewState());
+	}
+	public void recalculate() {
+		int[][] currentGrid = initialGameOfLifeGrid.getNewState();
+		initialGameOfLifeGrid.moveToSecondState(currentGrid);
+		
+		System.out.println("Current State \n");
 		printGrid(initialGameOfLifeGrid.getGrid());
 		
 		System.out.println("New State \n");
 		printGrid(initialGameOfLifeGrid.getNewState());
+		
 	}
 	
 }
