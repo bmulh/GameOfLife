@@ -75,7 +75,7 @@ public class GameOfLifeGrid {
 		try {
 			liveNeighborCount += currentGrid[neighborRow][neighborColumn];
 		} catch(Exception e) {
-			
+			// eat the exception since cells on edge will be checking cells out array
 		}
 		return liveNeighborCount;
 	}
