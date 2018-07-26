@@ -13,7 +13,7 @@ To run the unit tests use the following command
 ```
 mvn test
 ```
-##How it Works
+## How it Works
 
 Once the program is ran, the following CLI will display with three options:
 
@@ -30,19 +30,26 @@ _Display next state_
  Creates an initial grid with the grid length the user selected, 8x6 is defaulted to if no custom size was selected.  dead cells display as an '.' while living cells display as a 'O'.
 
  The next state is then displayed following the below rules:
-        1.  Any live cell with fewer than two live neighbors dies, as if caused by under population
-        2. Any live cell with more than three live neighbors dies, as if by overcrowding
-        3. Any live cell with two or three live neighbors lives on to the next generation
-        4. Any dead cell with exactly three live neighbors becomes a live cell
+1.  Any live cell with fewer than two live neighbors dies, as if caused by under population
+
+2. Any live cell with more than three live neighbors dies, as if by overcrowding
+
+3. Any live cell with two or three live neighbors lives on to the next generation
+
+4. Any dead cell with exactly three live neighbors becomes a live cell
 
 A user is then prompted with the following options
-    _Recalculate and display another interation_
+
+1) Recalculate and display another interation
+2) Return to previous menu
+
+_Recalculate and display another interation_
     
-    The user is able to continue with the new state as the initial state and create new generations of the grid
+The user is able to continue with the new state as the initial state and create new generations of the grid
 
-    _Return to previous menu_
+_Return to previous menu_
 
-    Takes the user back to the main menu
+Takes the user back to the main menu
 
 _Quit Conway's Game of Life_
 
