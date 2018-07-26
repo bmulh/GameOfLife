@@ -13,9 +13,9 @@ public class GameOfLifeGrid {
 
 	}
 	
-	public void setGridValues(int[][] grid){
-		int rowLength = grid.length;
-		int columnLength = grid[0].length;
+	public void setGridValues(){
+		int rowLength = this.grid.length;
+		int columnLength = this.grid[0].length;
 		
 		for(int i = 0; i < rowLength; i++) {
 			for(int j = 0; j < columnLength; j++) {
@@ -24,7 +24,7 @@ public class GameOfLifeGrid {
 				if(num <= 0.1) { //returns 1(alive) ~10% of the time
 					cellValue = 1;
 				}
-				grid[i][j] = cellValue;
+				this.grid[i][j] = cellValue;
 			}
 		}
 	}
@@ -49,7 +49,6 @@ public class GameOfLifeGrid {
 				} else {
 					newGrid[i][j] = this.grid[i][j];
 				}
-				System.out.println(this.grid[i][j]);
 			}
 		}
 		return newGrid;
@@ -79,6 +78,17 @@ public class GameOfLifeGrid {
 		}
 		return liveNeighborCount;
 	}
+	public void moveToSecondState(int[][] grid) {
+		int rowLength = grid.length;
+		int columnLength = grid[0].length;
+	
+		for(int i = 0; i < rowLength; i++) {
+			for(int j = 0; j < columnLength; j++) {
+				this.grid[i][j] = grid[i][j];
+			}
+		}
+	}
+	
 	//getters & setters
 	public int getNumberOfColumns() {
 		return numberOfColumns;
