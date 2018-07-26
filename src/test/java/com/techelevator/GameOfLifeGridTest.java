@@ -28,9 +28,9 @@ public class GameOfLifeGridTest {
 	
 	@Test
 	public void set_grid_values_to_zero_or_one() {
-		gameOfLifeGrid.setGridValues(gameOfLifeGrid.getGrid());
+		gameOfLifeGrid.setGridValues();
 		int[][] grid = gameOfLifeGrid.getGrid();
-		gameOfLifeGrid.setGridValues(grid);
+		gameOfLifeGrid.setGridValues();
 		
 		boolean isZeroOrOne = true;
 		

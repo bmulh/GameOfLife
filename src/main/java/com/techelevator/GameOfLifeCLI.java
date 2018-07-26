@@ -33,16 +33,7 @@ public class GameOfLifeCLI {
 				
 			}
 			if(choice.equals(MAIN_MENU_OPTION_DISPLAY_NEXT_STATE)){
-				if(initialGameOfLifeGrid.getNumberOfColumns() == 0) {
-					initialGameOfLifeGrid.setInitialSize(6, 8);
-				}
-				initialGameOfLifeGrid.setGridValues();
-				
-				System.out.println("Initial State \n");
-				printGrid(initialGameOfLifeGrid.getGrid());
-				
-				System.out.println("New State \n");
-				printGrid(initialGameOfLifeGrid.getNewState());
+				displayNextState();
 				
 				while(true) {
 				String choice2 = (String)menu.getChoiceFromOptions(NEXT_STATE_MENU_OPTIONS);
@@ -101,6 +92,18 @@ public class GameOfLifeCLI {
 			System.out.println();
 		}
 		System.out.println("\n*************************\n");
+	}
+	public void displayNextState() {
+		if(initialGameOfLifeGrid.getNumberOfColumns() == 0) {
+			initialGameOfLifeGrid.setInitialSize(6, 8);
+		}
+		initialGameOfLifeGrid.setGridValues();
+		
+		System.out.println("Initial State \n");
+		printGrid(initialGameOfLifeGrid.getGrid());
+		
+		System.out.println("New State \n");
+		printGrid(initialGameOfLifeGrid.getNewState());
 	}
 	
 }
