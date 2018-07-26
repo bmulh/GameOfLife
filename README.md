@@ -1,6 +1,6 @@
 # GameOfLife
 
-This code runs a 2D representation of Conway's Game of life, you can read more about it [HERE](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
+This code runs a 2D representation of Conway's Game of life, it is a cellular automation that was created by British mathematicion John Horton Conway.  You can read more about it [HERE](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
 ## BUILD
 
