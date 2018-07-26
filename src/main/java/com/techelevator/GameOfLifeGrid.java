@@ -44,11 +44,12 @@ public class GameOfLifeGrid {
 					newGrid[i][j] = 0;
 				} else if(liveNeighborTotalCount == 3 && this.grid[i][j] == 0) {
 					newGrid[i][j] = 1;
-				} else if(liveNeighborTotalCount == 2 || liveNeighborTotalCount == 3 && this.grid[i][j] == 1) {
+				} else if(this.grid[i][j] == 1 && (liveNeighborTotalCount == 2 || liveNeighborTotalCount == 3)) {
 					newGrid[i][j] = 1;
 				} else {
 					newGrid[i][j] = this.grid[i][j];
 				}
+				System.out.println(this.grid[i][j]);
 			}
 		}
 		return newGrid;

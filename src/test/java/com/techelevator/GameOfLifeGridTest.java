@@ -91,9 +91,9 @@ public class GameOfLifeGridTest {
 		gameOfLifeGrid.setGrid(nonRandomGrid);
 		int[][] newStateGrid = gameOfLifeGrid.getNewState();
 		Assert.assertEquals(0, newStateGrid[0][0]);
-		Assert.assertEquals(1, newStateGrid[0][1]);
+		Assert.assertEquals(0, newStateGrid[0][1]);
 		Assert.assertEquals(0, newStateGrid[0][2]);
-	    Assert.assertEquals(0, newStateGrid[0][3]); //not working
+	    Assert.assertEquals(0, newStateGrid[0][3]); 
 		Assert.assertEquals(0, newStateGrid[1][0]);
 		Assert.assertEquals(1, newStateGrid[1][1]);
 		Assert.assertEquals(1, newStateGrid[1][2]);
@@ -101,7 +101,7 @@ public class GameOfLifeGridTest {
 		Assert.assertEquals(0, newStateGrid[2][0]);
 		Assert.assertEquals(1, newStateGrid[2][1]);
 		Assert.assertEquals(0, newStateGrid[2][2]);
-//		Assert.assertEquals(0, newStateGrid[2][3]);
+		Assert.assertEquals(0, newStateGrid[2][3]);
 		Assert.assertEquals(1, newStateGrid[3][0]);
 		Assert.assertEquals(1, newStateGrid[3][1]);
 		Assert.assertEquals(1, newStateGrid[3][2]);
