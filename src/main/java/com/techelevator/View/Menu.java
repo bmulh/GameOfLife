@@ -79,7 +79,7 @@ public class Menu {
 				String userInput = in.nextLine();
 				dimension = Integer.valueOf(userInput);
 				
-				if(dimension < 1 || dimension > 14) {
+				if(dimension < 1 || dimension > 15) {
 					System.out.println("Sorry that is an invalid number - try again!");
 				} else {
 					isPositiveNumber = true;

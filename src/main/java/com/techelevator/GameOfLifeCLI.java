@@ -64,7 +64,7 @@ public class GameOfLifeCLI {
 	
 	
 	public void userSetInitialGrid() {
-		System.out.println("Please enter a grid that is larger than 0x0 and smaller than 15x15\n");
+		System.out.println("Please enter a grid that is larger than 0x0 and no larger than 15x15\n");
 		
 		System.out.println("How many rows?   ");
 		int rows = menu.getDimensionsFromUser();
