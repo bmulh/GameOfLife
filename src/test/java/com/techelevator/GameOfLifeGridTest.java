@@ -107,4 +107,19 @@ public class GameOfLifeGridTest {
 		Assert.assertEquals(1, newStateGrid[3][2]);
 		Assert.assertEquals(0, newStateGrid[3][3]);
 	}
+	@Test
+	public void _second_state_becomes_the_starting_state() {
+		int[][] startingGrid = {{0,0,0,0},
+      			   				 {0,0,0,0},
+      			   				 {0,0,0,0},
+      			   				 {0,0,0,0}};
+		
+		int[][] nonRandomGrid = {{0,0,1,0},
+				       			 {1,0,0,1},
+				       			 {0,1,0,0},
+				       			 {1,1,0,1}};
+		gameOfLifeGrid.setGrid(startingGrid);
+		gameOfLifeGrid.moveToSecondState(nonRandomGrid);
+		Assert.assertArrayEquals(nonRandomGrid, gameOfLifeGrid.getGrid());
+	}
 }
