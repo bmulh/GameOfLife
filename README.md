@@ -5,12 +5,12 @@ This code runs a 2D representation of Conway's Game of life, you can read more a
 ## BUILD
 
 Using Maven, you can run the application by running the following command
-
+```
 java -cp game-of-life-kata-0.0.1-SNAPSHOT.jar com.techelevator.GameOfLifeStart
 ```
 
 To run the unit tests use the following command 
-
+```
 mvn test
 ```
 ##How it Works
