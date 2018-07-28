@@ -10,7 +10,6 @@ public class GameOfLifeGrid {
 		this.grid = new int[rows][columns];
 		this.numberOfColumns = columns;
 		this.numberOfRows = rows;
-
 	}
 	
 	public void setGridValues(){
@@ -78,6 +77,7 @@ public class GameOfLifeGrid {
 		}
 		return liveNeighborCount;
 	}
+	
 	public void moveToSecondState(int[][] CurrentGrid) {
 		int rowLength = CurrentGrid.length;
 		int columnLength = CurrentGrid[0].length;
@@ -113,5 +113,4 @@ public class GameOfLifeGrid {
 	public void setGrid(int[][] grid) {
 		this.grid = grid;
 	}
-
 }

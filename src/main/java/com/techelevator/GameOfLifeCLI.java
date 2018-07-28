@@ -36,17 +36,14 @@ public class GameOfLifeCLI {
 			
 			if(choice.equals(MAIN_MENU_OPTION_CUSTOM_GRID_SIZE)){
 				userSetInitialGrid();
-				
 			}
 			if(choice.equals(MAIN_MENU_OPTION_DISPLAY_NEXT_STATE)){
 				displayNextState();
-				
 				while(true) {
 				String choice2 = (String)menu.getChoiceFromOptions(NEXT_STATE_MENU_OPTIONS);
 			
 					if(choice2.equals(NEXT_STATE_MENU_RECALCULATE)) {
-						recalculate();
-						
+						recalculate();	
 					} 
 					if(choice2.equals(NEXT_STATE_MENU_RETURN_TO_PREVIOUS_MENU)){
 						break;
@@ -60,9 +57,6 @@ public class GameOfLifeCLI {
 		}
 	}
 	
-	
-	
-	
 	public void userSetInitialGrid() {
 		System.out.println("\nPlease enter a grid that is larger than 0x0 and no larger than 15x15");
 		
@@ -74,6 +68,7 @@ public class GameOfLifeCLI {
 		
 		initialGameOfLifeGrid.setInitialSize(rows, columns);
 	}
+	
 	public void printGrid(int[][] grid) {
 		int rowLength = grid.length;
 		int columnLength = grid[0].length;
@@ -93,6 +88,7 @@ public class GameOfLifeCLI {
 		}
 		System.out.println("\n*************************\n");
 	}
+	
 	public void displayNextState() {
 		if(initialGameOfLifeGrid.getNumberOfColumns() == 0) {
 			initialGameOfLifeGrid.setInitialSize(6, 8);
@@ -105,6 +101,7 @@ public class GameOfLifeCLI {
 		System.out.println("\nNew State ");
 		printGrid(initialGameOfLifeGrid.getNewState());
 	}
+	
 	public void recalculate() {
 		int[][] currentGrid = initialGameOfLifeGrid.getNewState();
 		initialGameOfLifeGrid.moveToSecondState(currentGrid);
@@ -113,8 +110,6 @@ public class GameOfLifeCLI {
 		printGrid(initialGameOfLifeGrid.getGrid());
 		
 		System.out.println("New State \n");
-		printGrid(initialGameOfLifeGrid.getNewState());
-		
+		printGrid(initialGameOfLifeGrid.getNewState());	
 	}
-	
 }
