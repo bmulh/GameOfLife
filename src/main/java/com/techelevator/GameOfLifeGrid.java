@@ -37,7 +37,7 @@ public class GameOfLifeGrid {
 			for(int j = 0; j < columnLength; j++) {
 				
 				int liveNeighborTotalCount = 0;
-				liveNeighborTotalCount = countAllLiveNieghbors(this.grid, i, j);
+				liveNeighborTotalCount = countAllLiveNeighbors(this.grid, i, j);
 				
 				if(liveNeighborTotalCount < 2 || liveNeighborTotalCount > 3) {
 					newGrid[i][j] = 0;
@@ -53,7 +53,7 @@ public class GameOfLifeGrid {
 		return newGrid;
 	}
 	
-	public int countAllLiveNieghbors(int[][] currentGrid, int row, int column) {
+	public int countAllLiveNeighbors(int[][] currentGrid, int row, int column) {
 		int liveNeighborTotalCount = 0;
 		
 		liveNeighborTotalCount += validNeighbor(currentGrid, row + 1, column); //check bottom

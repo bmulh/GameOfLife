@@ -49,8 +49,8 @@ public class GameOfLifeGridTest {
 		int[][] nonRandomGrid = {{0,0,1,0},
 								{1,0,0,1},
 								{0,1,0,0}};
-		Assert.assertEquals(1, gameOfLifeGrid.countAllLiveNieghbors(nonRandomGrid, 0, 0));
-		Assert.assertEquals(3, gameOfLifeGrid.countAllLiveNieghbors(nonRandomGrid, 1, 1));
+		Assert.assertEquals(1, gameOfLifeGrid.countAllLiveNeighbors(nonRandomGrid, 0, 0));
+		Assert.assertEquals(3, gameOfLifeGrid.countAllLiveNeighbors(nonRandomGrid, 1, 1));
 	}
 	@Test
 	public void return_cell_dead_if_less_than_2_neighbors() {
