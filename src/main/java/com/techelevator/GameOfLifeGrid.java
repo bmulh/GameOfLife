@@ -12,6 +12,10 @@ public class GameOfLifeGrid {
 		this.numberOfRows = rows;
 	}
 	
+	/***
+	 * Sets the initial grid with dead or alive cells.
+	 * Alive cells occur ~20%.
+	 */
 	public void setGridValues(){
 		int rowLength = this.grid.length;
 		int columnLength = this.grid[0].length;
@@ -28,6 +32,10 @@ public class GameOfLifeGrid {
 		}
 	}
 	
+	/**
+	 * returns the new grid based on the game rules
+	 * @return the new state grid
+	 */
 	public int[][] getNewState(){
 		int rowLength = this.grid.length;
 		int columnLength = this.grid[0].length;
@@ -53,6 +61,13 @@ public class GameOfLifeGrid {
 		return newGrid;
 	}
 	
+	/***
+	 * Checks a cells neighbors and counts all alive neighbors
+	 * @param currentGrid
+	 * @param cells row in grid
+	 * @param cells column in grid
+	 * @return the cells alive neighbor count
+	 */
 	public int countAllLiveNeighbors(int[][] currentGrid, int row, int column) {
 		int liveNeighborTotalCount = 0;
 		
@@ -68,16 +83,27 @@ public class GameOfLifeGrid {
 		return liveNeighborTotalCount;
 	}
 	
+	/***
+	 * checks to see if the neighbor cell is in the grid and not out of the grid array
+	 * @param currentGrid
+	 * @param cells row in grid
+	 * @param cells column in grid
+	 * @return 1 if the cell is valid and alive - 0 if it is dead or out of the grid array
+	 */
 	public int validNeighbor(int[][] currentGrid, int neighborRow, int neighborColumn) {
 		int liveNeighborCount = 0;
 		try {
 			liveNeighborCount += currentGrid[neighborRow][neighborColumn];
 		} catch(Exception e) {
-			// eat the exception since cells on edge will be checking cells out array
+			// eat the exception since cells on edge will be checking cells out of array
 		}
 		return liveNeighborCount;
 	}
 	
+	/***
+	 * takes the next generation of grid and moves it to the current state
+	 * @param CurrentGrid
+	 */
 	public void moveToSecondState(int[][] CurrentGrid) {
 		int rowLength = CurrentGrid.length;
 		int columnLength = CurrentGrid[0].length;

@@ -5,7 +5,7 @@ import java.util.*;
 
 
 public class GameOfLifeCLI {
-	
+
 	private static final String MAIN_MENU_OPTION_CUSTOM_GRID_SIZE = "Select a custom Grid(if not selected, will default to 8x6 grid)";
 	private static final String MAIN_MENU_OPTION_DISPLAY_NEXT_STATE = "Display next state";
 	private static final String MAIN_MENU_OPTION_QUIT = "Quit Conway's Game of Life";
@@ -39,6 +39,7 @@ public class GameOfLifeCLI {
 			}
 			if(choice.equals(MAIN_MENU_OPTION_DISPLAY_NEXT_STATE)){
 				displayNextState();
+				
 				while(true) {
 				String choice2 = (String)menu.getChoiceFromOptions(NEXT_STATE_MENU_OPTIONS);
 			
