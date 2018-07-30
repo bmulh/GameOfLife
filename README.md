@@ -2,9 +2,9 @@
 
 This code runs a 2D representation of Conway's Game of life, it is a cellular automation that was created by British mathematicion John Horton Conway.  You can read more about it [HERE](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).
 
-## BUILD
+## Build
 
-Using Maven, you can run the application by running the following command
+Using Maven, you can run the application by running the following command in the target directory
 ```
 java -cp game-of-life-kata-0.0.1-SNAPSHOT.jar com.techelevator.GameOfLifeStart
 ```
